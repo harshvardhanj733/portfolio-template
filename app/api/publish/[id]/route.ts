@@ -1,7 +1,8 @@
 import { connectToMongo } from "@/app/db/connectToMongo";
 import { PublishedModel } from "@/app/models/PublishedDetails";
 
-export async function GET(request: Request, { params }: { params: { id: string } }){
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }){
+    console.log(params);
     const {id} = await params;
     try{
         await connectToMongo();
