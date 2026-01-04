@@ -1,0 +1,64 @@
+{
+    "name": "XYZ",
+    "role": "Full Stack Developer",
+    "about": "I am a passionate Full Stack Developer with expertise in building dynamic and responsive web applications. I love to explore new technologies and continuously improve my skills.",
+    "resume": "https://example.com/resume.pdf",
+    "experience": [
+        {
+            "company": "Tech Solutions Inc.",
+            "position": "Software Engineer",
+            "duration": "June 2021 - Present",
+            "responsibilities": [
+                "Developed and maintained web applications using React and Node.js.",
+                "Collaborated with cross-functional teams to define, design, and ship new features.",
+                "Optimized applications for maximum speed and scalability."
+            ]
+        },
+        {
+            "company": "Web Innovators",
+            "position": "Junior Developer",
+            "duration": "Jan 2020 - May 2021",
+            "responsibilities": [
+                "Assisted in the development of client websites using HTML, CSS, and JavaScript.",
+                "Participated in code reviews and contributed to team knowledge sharing.",
+                "Helped troubleshoot and debug issues in existing applications."
+            ]
+        }
+    ],
+    "socials": {
+        "linkedin": "https://www.linkedin.com/in/xyz/",
+        "github": "https://www.github.com/xyz98",
+        "email": "xyz98@gmail.com",
+        "twitter": "https://twitter.com/xyz98",
+        "instagram": "https://www.instagram.com/xyz98/"
+    },
+    "projects": [
+        {
+            "name": "Project One",
+            "description": "A web application that allows users to track their tasks and manage their time effectively.",
+            "link": "sjdfhsdfh.com"
+        },
+        {
+            "name": "Project Two",
+            "description": "An e-commerce platform that provides a seamless shopping experience with advanced features.",
+            "link": "asdasdasd.com"
+        }
+    ],
+    "education": [
+        {
+            "institution": "ABC University",
+            "degree": "Bachelor of Science in Computer Science",
+            "duration": "2016 - 2020"
+        }
+    ],
+    "skills": [
+        {"JavaScript": 5},
+        {"React": 4},
+        {"Node.js": 4},
+        {"HTML/CSS": 5},
+        {"Python": 3},
+        {"Django": 3},
+        {"SQL": 4},
+        {"Git": 4}
+    ]
+}
