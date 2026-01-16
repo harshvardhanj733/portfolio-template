@@ -353,11 +353,11 @@ export default function AdminPage() {
                 placeholder="e.g. Jan 2020 - Present"
               />
               <Textarea
-                label="Responsibilities (comma separated)"
-                value={exp.responsibilities.join(", ")}
+                label="Responsibilities (semicolon separated)"
+                value={exp.responsibilities.join("; ")}
                 onChange={(v: string) => {
                   const updated = [...portfolio.experience!];
-                  updated[i].responsibilities = v.split(",").map(s => s.trim());
+                  updated[i].responsibilities = v.split(";").map(s => s.trim());
                   updateField("experience", updated);
                   setErrors((prev) => {
                     const newErrors = { ...prev };
