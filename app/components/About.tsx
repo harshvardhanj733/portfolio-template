@@ -67,7 +67,7 @@ function About({ about, loading }: AboutProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15, duration: 0.8 }}
-          className="mt-6 text-neutral-900 text-lg sm:text-xl leading-relaxed"
+          className="mt-6 text-neutral-900 text-lg sm:text-xl leading-relaxed whitespace-pre-line"
         >
           {about}
         </motion.p>
