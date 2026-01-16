@@ -51,12 +51,12 @@ function Projects({
 
         {/* Projects Grid */}
         {loading &&
-            Array.from({ length: 2 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-40 rounded-2xl bg-neutral-200 animate-pulse"
-              />
-            ))}
+          Array.from({ length: 2 }).map((_, i) => (
+            <div
+              key={i}
+              className="h-40 rounded-2xl bg-neutral-200 animate-pulse"
+            />
+          ))}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -74,72 +74,83 @@ function Projects({
                 key={i}
                 className="h-40 rounded-2xl bg-neutral-200 animate-pulse"
               />
-          ))}
+            ))}
 
-          {!loading && projects.map((project, index) => (
-            <motion.article
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-background/60 p-6 sm:p-8 backdrop-blur-xl"
-            >
-              {/* Hover Glow */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-xl" />
-              </div>
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  {project.title}
-                </h3>
-
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+          {!loading &&
+            projects.map((project, index) => (
+              <motion.article
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ y: -6 }}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-background/60 p-6 sm:p-8 backdrop-blur-xl"
+              >
+                {/* Hover Glow */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-xl" />
                 </div>
 
-                {/* Actions */}
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:opacity-90 sm:w-auto"
-                    >
-                      Live Demo
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  )}
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                    {project.title}
+                  </h3>
 
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition hover:bg-muted sm:w-auto"
-                    >
-                      <Github className="h-4 w-4" />
-                      Source
-                    </a>
-                  )}
+                  <div className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <ul className="mt-6 space-y-3">
+                      {project.description
+                        .split(";")
+                        .map((item) => item.trim())
+                        .filter((item) => item.length > 0)
+                        .map((item, index) => (
+                          <li key={index} className="list-disc ml-4">
+                            {item}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:opacity-90 sm:w-auto"
+                      >
+                        Live Demo
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    )}
+
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition hover:bg-muted sm:w-auto"
+                      >
+                        <Github className="h-4 w-4" />
+                        Source
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
         </motion.div>
       </div>
     </section>
